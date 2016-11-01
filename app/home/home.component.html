@@ -1,0 +1,107 @@
+<article>
+    <div class="container">
+        <!--<home_article></home_article>-->
+        <div class="col-md-8">
+            <div class="row-fluid" *ngFor="let model of bills">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>
+                            <a routerLink="/view/{{model.gid}}" class="title">{{model.name}}</a>
+                        </h3>
+                        <div class="caption">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            {{model.time + "前"}}
+                            &nbsp; | &nbsp;
+                            <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                            {{model.blogChannel.name}}
+                            &nbsp; | &nbsp;
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            <a href="" class="link" data-toggle="tooltip" data-placement="top" title="由小楠同学发布">小楠同学</a>
+                            &nbsp; | &nbsp;
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                            7条评论
+                            &nbsp; | &nbsp;
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            {{model.views + " views"}}
+                        </div>
+                        <hr class="hr" noshade="noshade">
+                        <div class="caption">
+                            <p class="hide_p" [innerHtml]="model.content"></p>
+                        </div>
+                        <div class="repeat-widget">
+                            <a class="label label-success" colorIn
+                               *ngFor="let mark of model.blogMarkList">{{mark.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- 查询 -->
+            <!--<div class="thumbnail">-->
+            <!--<div class="input-group">-->
+            <!--<input type="text" class="form-control" placeholder="Search for...">-->
+            <!--<span class="input-group-btn">-->
+            <!--<button class="btn btn-default" type="button">-->
+            <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
+            <!--</button>-->
+            <!--</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="alert alert-warning alert-dismissible" role="alert">-->
+            <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+            <!--<span aria-hidden="true">&times;</span>-->
+            <!--</button>-->
+            <!--<strong>Warning!</strong> 主要是对所学知识的梳理和总结，同时也希望能够帮到其他童鞋。现在我给网站添加了云音乐，各位写代码写累了不妨来听听音乐O(∩_∩)O~-->
+            <!--</div>-->
+            <div class="alert alert-info" role="alert">
+                主要是对所学知识的梳理和总结，同时也希望能够帮到其他童鞋。现在我给网站添加了云音乐，各位写代码写累了不妨来听听音乐O(∩_∩)O~
+            </div>
+
+            <div class="thumbnail">
+                <h4 style="margin-left: 10px;">最新文章</h4>
+                <hr class="hr">
+                <table class="table table-condensed">
+                    <tr *ngFor="let model of articleList">
+                        <td>
+                            <a class="link" style="font-size: small" routerLink="/view/{{model.gid}}">{{model.name}}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="thumbnail">
+                <h4 style="margin-left: 10px;">标签</h4>
+                <hr class="hr" noshade="noshade">
+                <a href="" class="link" *ngFor="let mark of markList" [markCloud]="mark.count" data-toggle="tooltip"
+                   data-placement="top" title="{{mark.count}} 个话题" (click)="goMark(mark.markGid)" >
+                    {{mark.markName}}
+                </a>
+            </div>
+
+            <div class="thumbnail">
+                <h4 style="margin-left: 10px;">分类</h4>
+                <hr class="hr" noshade="noshade">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let group of channelList">
+                        <span class="badge badge-info">{{group.count}}</span>
+                        {{group.name}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="thumbnail">
+                <h4 style="margin-left: 10px;">友情链接</h4>
+                <hr class="hr">
+
+                <table class="table">
+                    <tr *ngFor="let friend of friendList">
+                        <td>
+                            <a class="link" href="{{friend.url}}" target="view_window">{{friend.name}}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>

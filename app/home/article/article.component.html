@@ -1,0 +1,36 @@
+<div class="col-md-8">
+    <div class="row-fluid" *ngFor="let model of bills">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>
+                    <a routerLink="/view/{{model.gid}}" class="title">{{model.name}}</a>
+                </h3>
+                <div class="caption">
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    {{model.time + "前"}}
+                    &nbsp; | &nbsp;
+                    <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                    {{model.blogChannel.name}}
+                    &nbsp; | &nbsp;
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <a href="" class="link" data-toggle="tooltip" data-placement="top" title="由小楠同学发布">小楠同学</a>
+                    &nbsp; | &nbsp;
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                    7条评论
+                    &nbsp; | &nbsp;
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    {{model.views + " views"}}
+                </div>
+                <hr class="hr" noshade="noshade">
+                <div class="caption">
+                    <p class="hide_p" [innerHtml]="model.content"></p>
+                </div>
+                <div class="repeat-widget">
+                    <span>{{u}}</span>
+                    <a class="label label-success" colorIn
+                       *ngFor="let mark of model.blogMarkList">{{mark.name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

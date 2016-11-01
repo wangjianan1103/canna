@@ -1,0 +1,116 @@
+/**
+body{
+    padding-top: 150px;
+}
+*/
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'����' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+body {
+    background: url(../image/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.link {
+    /*color: #7C7C7C;*/
+    color: #000000;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.link:visited {
+    text-decoration:none;
+}
+.link:active{
+    text-decoration:none;
+}
+.link:hover{
+    color: #970714;
+    text-decoration:none;
+}
+.hr {
+    margin-bottom: 10px;
+    margin-top: 1px;
+    border: 0px;
+    border-top: 1px solid #1e88e5;
+}
+.title {
+    color: #000000;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.title:visited {
+    text-decoration:none;
+}
+.title:active{
+    text-decoration:none;
+}
+.title:hover{
+    color: #970714;
+    text-decoration:none;
+}
+
+.bs-callout {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout-info {
+    border-color: #5bc0de;
+}
+.bs-callout p{
+    margin: 5px;
+}
+
+.hide_p {
+    position:relative;
+    line-height:1.4em;
+    /* 3 times the line-height to show 3 lines */
+    height:3.5em;
+    overflow:hidden;
+}
+.hide_p::after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    background:url(http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png) repeat-y;
+}
+.badge:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.badge-error {
+    background-color: #b94a48;
+}
+.badge-error:hover {
+    background-color: #953b39;
+}
+.badge-warning {
+    background-color: #f89406;
+}
+.badge-warning:hover {
+    background-color: #c67605;
+}
+.badge-success {
+    background-color: #468847;
+}
+.badge-success:hover {
+    background-color: #356635;
+}
+.badge-info {
+    background-color: #3a87ad;
+}
+.badge-info:hover {
+    background-color: #2d6987;
+}
+.badge-inverse {
+    background-color: #333333;
+}
+.badge-inverse:hover {
+    background-color: #1a1a1a;
+}
