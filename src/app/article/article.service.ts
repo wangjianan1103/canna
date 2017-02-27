@@ -1,23 +1,22 @@
 import {Injectable} from "@angular/core";
 import {HttpService} from "../http/http.service";
-import any = jasmine.any;
 
 @Injectable()
-export class HomeService {
+export class ArticleService {
 
     constructor(public httpService: HttpService) {
     }
 
     getBills(): Promise<any> {
         let body = JSON.stringify({channelGid: null});
-        return this.httpService.post('index/getIndexInfo', body)
+        return this.httpService.post('index/getBills', body)
             .then(res => res = res.json().content);
     }
 
     getBlogInfo(channel: string, mark: string): Promise<any> {
         let body = JSON.stringify(
-                {channelGid: channel, markGid: mark}
-            );
+            {channelGid: channel, markGid: mark}
+        );
         return this.httpService.post('index/getBlogInfo', body)
             .then(res => res = res.json().content);
     }

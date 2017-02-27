@@ -1,8 +1,8 @@
+logs/*
+!.gitkeep
 node_modules/
-typings/
-*.idea/
-*.iml
-app/**/*.js
-app/**/*.map
-**/*npm-debug.log.*
-*.idea*
+bower_components/
+tmp
+.DS_Store
+.idea
+dist/
