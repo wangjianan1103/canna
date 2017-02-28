@@ -4,7 +4,6 @@ import {ArticleService} from "./article.service";
 import {HttpService} from "../http/http.service";
 
 @Component({
-    moduleId: module.id,
     selector: 'article_app',
     templateUrl: 'article.component.html',
     providers: [ArticleService, HttpService]

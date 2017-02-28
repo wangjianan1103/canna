@@ -5,7 +5,6 @@ import {HttpService} from "../http/http.service";
 import {Subscription} from "rxjs";
 
 @Component({
-    moduleId: module.id,
     selector: 'home_app',
     templateUrl: 'home.component.html',
     providers: [HomeService, HttpService]

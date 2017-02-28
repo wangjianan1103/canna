@@ -5,7 +5,6 @@ import {NavbarService} from './navbar.service';
 import {HttpService} from '../http/http.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'navigation_bar',
     templateUrl: 'navigation_bar.html',
     providers: [NavbarService, HttpService]

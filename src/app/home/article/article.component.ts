@@ -4,7 +4,6 @@ import {HomeService} from "../home.service";
 import {HttpService} from "../../http/http.service";
 
 @Component({
-    moduleId: module.id,
     selector: 'home_article',
     templateUrl: 'article.component.html',
     providers: [HomeService, HttpService]

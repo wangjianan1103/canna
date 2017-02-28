@@ -5,7 +5,6 @@ import {BlogService} from "./blog.service";
 import {HttpService} from "../http/http.service";
 
 @Component({
-    moduleId: module.id,
     selector: 'blog',
     templateUrl: 'blog.component.html',
     providers: [BlogService, HttpService]

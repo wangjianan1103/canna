@@ -13,7 +13,6 @@ import {ColorInDirective} from './config/colorIn.directive';
 import {MarkCloudDirective} from './config/markCloud.directive';
 import {ArticlesComponent} from './article/article.component';
 import {ArticlesDetialComponent} from './article/article.detial.component';
-// import './rxjs-extensions';
 
 @NgModule({
     imports: [
