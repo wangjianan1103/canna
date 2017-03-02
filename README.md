@@ -1,9 +1,12 @@
 [start]
 下载安装 npm node.js
 执行npm install 最好翻墙
+[plugin]
+npm install --save-dev compression-webpack-plugin
 [run]
 npm install
 npm satrt
+
 
 
 package.json

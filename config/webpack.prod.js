@@ -22,6 +22,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 /**
  * Webpack Constants
  */
@@ -37,7 +38,7 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 
 module.exports = function (env) {
     return webpackMerge(commonConfig({env: ENV}), {
-        devtool: 'source-map',
+        devtool: '#source-map',
 
         output: {
             path: helpers.root('dist'),
@@ -109,7 +110,18 @@ module.exports = function (env) {
                 }
             }),
 
+            new CompressionWebpackPlugin({ //gzip 压缩
+                asset: '[path].gz[query]',
+                algorithm: 'gzip',
+                test: new RegExp(
+                    '\\.(js|css)$'    //压缩 js 与 css
+                ),
+                threshold: 10240,
+                minRatio: 0.8
+            }),
+
             new UglifyJsPlugin({
+                comments: false,        //去掉注释
                 beautify: false, //prod
                 output: {
                     comments: false
