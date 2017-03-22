@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Headers, Http, RequestOptions, Response} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import {Injectable} from "@angular/core";
+import {Headers, Http, RequestOptions} from "@angular/http";
+import "rxjs/add/operator/toPromise";
 
 @Injectable()
 export class HttpService {
-    private path = 'http://api.wangjianan.top/';
+    private path = 'http://api.oopmind.com/';
     private headers = new Headers({'Content-Type': 'application/json'});
     private options = new RequestOptions({headers: this.headers});
 
