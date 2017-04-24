@@ -93,6 +93,9 @@ module.exports = function (env) {
             new CopyWebpackPlugin([
                 { from: 'src/404.html', to: '' }
             ]),
+            new CopyWebpackPlugin([
+                { from: 'src/assets/google/google5654e13692203149.html', to: '' }
+            ]),
             new ScriptExtHtmlWebpackPlugin({
                 defaultAttribute: 'defer'
             }),
