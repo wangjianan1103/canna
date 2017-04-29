@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {Title}     from '@angular/platform-browser';
 import {Router, ActivatedRoute} from "@angular/router";
 import {Location} from "@angular/common";
 import {BlogService} from "./blog.service";
@@ -15,13 +16,15 @@ export class BlogComponent implements OnInit {
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 private location: Location,
-                private blogService: BlogService) {
+                private blogService: BlogService,
+                private titleService: Title) {
     }
 
     ngOnInit(): void {
         this.blogService.getBlog(this.route.snapshot.params['id'])
             .then(content => {
                 this.blog = content;
+                this.titleService.setTitle(content.name);
             });
     }
 

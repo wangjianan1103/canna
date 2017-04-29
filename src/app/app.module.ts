@@ -1,5 +1,5 @@
 import {NgModule}      from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import {FormsModule}   from '@angular/forms';
 import {HttpModule, JsonpModule}    from '@angular/http';
 
@@ -32,6 +32,9 @@ import {ArticlesDetialComponent} from './article/article.detial.component';
         ArticleComponent,
         ArticlesComponent,
         ArticlesDetialComponent
+    ],
+    providers: [
+        Title
     ],
     bootstrap: [AppComponent]
 })
